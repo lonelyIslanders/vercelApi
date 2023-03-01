@@ -3,8 +3,10 @@ const app = new Koa();
 const dbCommand = require('./db/dbCommand')
 
 app.use(async ctx => {
-    const dd = await dbCommand.test()
-    let names = dd[0].name;
+    await dbCommand.tryW();
+    const dd = await dbCommand.test();
+    const i = Math.floor(Math.random(dd.length));
+    let names = dd[i].name;
     ctx.body = `Hello world\n你好世界\nfuck you world\n你好${names}\n${JSON.stringify(dd)}`
 })
 
