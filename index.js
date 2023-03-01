@@ -8,7 +8,7 @@ app.use(async ctx => {
         name = '代币'
     }
     const dd = await dbCommand.test()
-    ctx.body = `Hello world\n你好世界\nfuck you world\n你好${name}\n${dd}`
+    ctx.body = `Hello world\n你好世界\nfuck you world\n你好${name}\n${JSON.stringify(dd)}`
 })
 
 app.listen(3399)
