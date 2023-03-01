@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const app = new Koa();
+const dbCommand = require('./db/dbCommand')
 
 app.use(async ctx => {
     let name = ctx.request.query.name;
