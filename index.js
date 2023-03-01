@@ -7,7 +7,8 @@ app.use(async ctx => {
     if (name === undefined) {
         name = '代币'
     }
-    ctx.body = `Hello world\n你好世界\nfuck you world\n你好${name}\n`
+    const dd = await dbCommand.test()
+    ctx.body = `Hello world\n你好世界\nfuck you world\n你好${name}\n${aa}`
 })
 
 app.listen(3399)
